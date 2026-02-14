@@ -1,0 +1,147 @@
+decl g_int as int = 10;
+decl g_float as float = 2.5;
+decl g_bool as bool = true;
+decl g_string as string = "Start";
+decl g_counter as int;
+
+const decl PI as float = 3.14159;
+
+decl g_vector[5] as int = {10, 20, 30, 40, 50};
+
+class Calculator {
+    public:
+        decl factor as int;
+        decl memory as float;
+
+        Calculator(decl f as int) {
+            factor = f;
+            memory = 0.0;
+        }
+
+        decl addValues(decl a as int, decl b as int) as int {
+            decl result as int;
+            result = (a + b) * factor;
+            return result;
+        }
+};
+
+decl myCalc as Calculator;
+
+decl checkParity(decl val as int) as bool {
+    decl isEven as bool;
+    if ((val % 2) == 0) {
+        isEven = true;
+    } else {
+        isEven = false;
+    }
+    return isEven;
+}
+
+/* eroare 1: variabila nedeclarata
+decl main_err1() as int {
+    unknown_var = 10; 
+}*/
+
+/* eroare 2: redeclarare
+decl main_err2() as int {
+    decl x as int;
+    decl x as int; 
+}
+*/
+
+/* eroare 3: tipuri incompatibile la atribuire
+decl main_err3() as int {
+    decl x as int;
+    x = "string_value"; 
+}
+*/
+
+/* eroare 4: tipuri incompatibile in expresie
+decl main_err4() as int {
+    decl f as float;
+    f = 10.5 + 10; 
+}
+*/
+
+/* eroare 5: nu exista variabila in clasa
+decl main_err5() as int {
+    myCalc.nonExistentField = 10;
+}
+*/
+
+/* eroare 6: parametrii incompatibili
+decl main_err6() as int {
+    checkParity("text");
+}
+*/
+
+/* eroare 7: declarare in corp if
+decl err9() as void {
+    if (true) {
+        decl x as int;
+    }
+}
+*/
+
+decl bool_var as bool;
+
+decl main() as int {
+
+    // eroare 8: declarare in main
+    // decl new_var as float = 1.5;
+
+    // eroare 9: folosire op unara pe tip gresit
+    // bool_var = !g_string;
+    
+
+    g_int = 10 + 5 * 2 - 8 / 4; 
+    Print(g_int);
+
+    g_int = (10 + 5) * (20 / 10);
+    Print(g_int);
+
+    g_float = PI * 2.0;
+    Print(g_float);
+
+
+    g_bool = true && (false || true);
+    Print(g_bool);
+
+    g_bool = !(g_int > 10); 
+    Print(g_bool);
+
+
+
+    g_counter = 0;
+    while (g_counter < 3) {
+        Print("Loop iteration:");
+        Print(g_counter);
+        g_counter = g_counter + 1;
+    }
+
+    if (g_counter == 3) {
+        Print("Counter reached target correctly.");
+    } else {
+        Print("Counter logic failed.");
+    }
+
+
+    g_bool = checkParity(4);
+    if (g_bool == true) {
+        Print("4 is Even (Function call working)");
+    }
+
+    g_int = 11;
+    if (checkParity(g_int) == false) {
+        Print("11 is Odd");
+    }
+
+
+    myCalc.factor = 5;
+    
+    g_int = myCalc.addValues(2, 3);
+    Print(g_int);
+
+    g_int = g_vector[0] + 5;
+    Print(g_int);
+}

@@ -1,0 +1,54 @@
+Scope: constructor_Calculator
+Parent scope: class_Calculator
+Symbols defined:
+Name: f | Kind: parameter | Type: int | Scope: local
+--------------------------------------------
+Scope: function_addValues
+Parent scope: class_Calculator
+Symbols defined:
+Name: a | Kind: parameter | Type: int | Scope: local
+Name: b | Kind: parameter | Type: int | Scope: local
+Name: result | Kind: variable | Type: int | Scope: local
+--------------------------------------------
+Scope: class_Calculator
+Parent scope: Global
+Symbols defined:
+Name: Calculator | Kind: constructor | Type: constructor
+Name: addValues | Kind: function | Return type: int | Parameters: int a, int b
+Name: factor | Kind: variable | Type: int | Scope: local
+Name: memory | Kind: variable | Type: float | Scope: local
+--------------------------------------------
+Scope: function_checkParity
+Parent scope: Global
+Symbols defined:
+Name: isEven | Kind: variable | Type: bool | Scope: local
+Name: val | Kind: parameter | Type: int | Scope: local
+--------------------------------------------
+Scope: function_main
+Parent scope: Global
+Symbols defined:
+--------------------------------------------
+Scope: Global
+Parent scope: NULL
+Symbols defined:
+Name: Calculator | Kind: class | Type: class
+Name: PI | Kind: constant variable | Type: const float
+Name: bool_var | Kind: variable | Type: bool | Scope: global
+Name: checkParity | Kind: function | Return type: bool | Parameters: int val
+Name: g_bool | Kind: variable | Type: bool | Scope: global initialized | Value: false
+Name: g_counter | Kind: variable | Type: int | Scope: global | Value: 0
+Name: g_float | Kind: variable | Type: float | Scope: global initialized | Value: 6.283180
+Name: g_int | Kind: variable | Type: int | Scope: global initialized | Value: 5
+Name: g_string | Kind: variable | Type: string | Scope: global initialized | Value: Start
+Name: g_vector | Kind: array | Type: int
+Name: main | Kind: function | Return type: int | Parameters: 
+Name: myCalc | Kind: variable | Type: Calculator | Scope: global
+--------------------------------------------
+Scope: class_Calculator
+Parent scope: Global
+Symbols defined:
+Name: Calculator | Kind: constructor | Type: constructor
+Name: addValues | Kind: function | Return type: int | Parameters: int a, int b
+Name: factor | Kind: variable | Type: int | Scope: local
+Name: memory | Kind: variable | Type: float | Scope: local
+--------------------------------------------
